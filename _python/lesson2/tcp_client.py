@@ -5,9 +5,9 @@ class Client:
 
     def __init__(self, tcp_port, tcp_ip, buf_size):
 
-        self.tcp_port = tcp_port,
-        self.tcp_ip = tcp_ip,
-        self.buf_size = buf_size,
+        self.tcp_port = tcp_port
+        self.tcp_ip = tcp_ip
+        self.buf_size = buf_size
         self.tcp_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
     def getTcp_ip(self):
