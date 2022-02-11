@@ -10,13 +10,13 @@ class Server:
         self.tcp_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
     def getTcp_ip(self):
-        return self.tcp_ip[0]
+        return self.tcp_ip
 
     def getTcp_port(self):
-        return self.tcp_port[0]
+        return self.tcp_port
     
     def getBuf_size(self):
-        return self.buf_size[0]
+        return self.buf_size
 
     def createSocket(self):
 
@@ -61,11 +61,10 @@ class Server:
         tcp_socket.close()
         print("[INFO] Socket desconectado!")
 
-tcp_port = 8000
+
 tcp_ip = '127.0.0.1'
 buf_size = 30
 
-server = Server(tcp_port, tcp_ip, buf_size)
-
+server = Server(8000, tcp_ip, buf_size)
 server.createSocket()
 server.recieve()
