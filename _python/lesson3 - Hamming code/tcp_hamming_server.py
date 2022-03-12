@@ -42,14 +42,14 @@ class Server:
                 if(2**i >= m + i + 1):
                     return i
 
-        def positionRedundantBits(data, r):
+        def positionRedundantBits(data, redundant):
 
             j = 0
             k = 1
             m = len(data)
             result = ''
 
-            for i in range(1, m + r +1):
+            for i in range(1, m + redundant +1):
                 if(i == 2**j):
                     result = result + '0'
                     j += 1
@@ -58,11 +58,11 @@ class Server:
                     k += 1
             return result[::-1]
 
-        def calculateParityBits(arr, r):
+        def calculateParityBits(arr, redundant):
 
             n = len(arr)
 
-            for i in range(r):
+            for i in range(redundant):
                 value = 0
                 for j in range(1, n + 1):
                     if(j & (2**i) == (2**i)):

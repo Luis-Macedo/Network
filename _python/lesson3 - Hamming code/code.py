@@ -5,14 +5,14 @@ def calculateRedundantBits(m):
 		if(2**i >= m + i + 1):
 			return i
 
-def positionRedundantBits(data, r):
+def positionRedundantBits(data, redundant):
     # Bits de redundancia são alocados nas posições que correspondam à potência de 2.
 	j = 0
 	k = 1
 	m = len(data)
 	result = ''
 	# Se a posição é uma potencia de 2, então se insere 0.
-	for i in range(1, m + r +1):
+	for i in range(1, m + redundant +1):
 		if(i == 2**j):
 			result = result + '0'
 			j += 1
@@ -22,10 +22,10 @@ def positionRedundantBits(data, r):
 	# As posições do resultado são invertidas.
 	return result[::-1]
 
-def calculateParityBits(arr, r):
+def calculateParityBits(arr, redundant):
 	n = len(arr)
 	# Para encontrar o bit de paridade, terá que iterar de 0 a r-1.
-	for i in range(r):
+	for i in range(redundant):
 		value = 0
 		for j in range(1, n + 1):
 			if(j & (2**i) == (2**i)):
