@@ -1,5 +1,4 @@
 import socket
-from xml.dom.pulldom import parseString
 
 class Client:
 
@@ -30,7 +29,7 @@ class Client:
         tcp_socket.connect((tcp_ip,tcp_port))
         print("[INFO] Socket conectado à porta: ",tcp_port)
 
-        msg = "Enviando um olá"
+        msg = "11101001110"
         msg = msg.encode('utf-8')
 
         print("[INFO] Enviando dados para o servidor...")
@@ -40,11 +39,10 @@ class Client:
         print("[INFO] Recebendo dados do servidor...")
         data = tcp_socket.recv(buf_size)
 
-        print("[INFO] Decodificando dados recbidos...")
+        print("[INFO] Decodificando dados recebidos...")
         data = data.decode('utf-8')
 
         print('[INFO] Dados recbidos do servidor:',data)
-
 
         print("[INFO] Desconectando socket...")
         tcp_socket.close()
