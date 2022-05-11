@@ -1,4 +1,5 @@
 # Network classes with all the exercises
 
-# RA: 1897841
-# Name: Luis Henrique Macedo da Silva
+## About this repository
+
+This repository has some Python code examples used to demonstrate my Knowledge on Network classes
